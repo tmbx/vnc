@@ -1,0 +1,9 @@
+MetaVNC version 0.6.6
+
+Changes from the version 0.6.5
+
+SERVER:
+- bug fix: transparent region corrupts after changing screen resolution
+  - rewrite code of resetting transparent region
+  - reset client side transparent region by sending full-screen size
+    rectangle of decreased transparent region

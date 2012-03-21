@@ -1,0 +1,164 @@
+* version 0.6.6  2007/10/28
+SERVER:
+- bug fix: transparent region corrupts after changing screen resolution
+  - rewrite code of resetting transparent region
+  - reset client side transparent region by sending full-screen size
+    rectangle of decreased transparent region
+
+* version 0.6.5  2007/09/10
+COMMON:
+- merge diffs from tightvnc 1.3.8 to 1.3.9
+
+VIEWER:
+- bug rix: setting focus just after vncviewer application got focus
+
+SERVER:
+- bug fix: dead-lock against linux viewer
+- change order of sending transparent region and screen updates
+- support desktop sharing area
+
+* version 0.6.0  2007/02/04
+
+COMMON:
+- protocol enhancement to realize Microsoft-Windows-like task switch behavior
+  rfbWindowControlMsg ... add new control rfbWindowControlSetFocus
+  rfbWindowStateMsg ... add new state rfbWindowStateFocused
+
+SERVER:
+- support rfbWindowControlSetFocus and rfbWindowStateFocused
+- add debug messages
+- switch libiconv to Win32 unicode APIs (WideCharToMultiByte, etc.)
+- bug fix : dead lock in updating launcher
+- use sendQueued instead of sendExact in vncClient::SendTransRect
+
+VIEWER:
+- implement meta window manager
+  (freedesktop.org style menus are not supported yet)
+- split MetaVNC options from original "Connection" option tab
+
+* version 0.5.7  2006/09/17
+SERVER:
+- change the code base from tightvnc 1.3dev6 to tightvnc 1.3.8
+
+VIEWER:
+- change the code base from tightvnc 1.3dev6 to tightvnc 1.3.8
+
+* version 0.5.6  2006/07/30
+SERVER:
+- add support for console windows	
+- add new option to enable/disable the Meta Window Manager
+- bug fix of vnclauncher
+- improve accuracy to detect changes of window visibility
+
+VIEWER:
+- no changes
+
+* version 0.5.5  2006/06/03
+SERVER:
+- redesign vnclauncher (to fix bug id #1395073)
+- change the code base from tightvnc 1.3dev7 to tightvnc 1.3dev6
+  (to avoid bug #1446641)
+
+VIEWER:
+- change the code base from tightvnc 1.3dev7 to tightvnc 1.3dev6
+
+* version 0.5.1  2006/01/13
+SERVER (Meta-Window-Manager):
+- support WindowsXP style icons (id #1395075)
+
+VIEWER:
+- bug fix of id #1395077 and #1399522 (by suppressing false mouse events)
+
+* version 0.5.0  2005/12/31
+SERVER:
+- The Meta-Window-Manager is greatly enhanced!
+  (icons and UTF-8 string support)
+- move a part of the meta window manager feature to a metaWM.dll
+
+VIEWER:
+- support saving/loading MetaVNC options to/from registry
+
+* version 0.4.1  2005/09/10
+SERVER:
+- merge updates of TightVNC from the version 1.3dev6 to the version 1.3dev7
+
+VIEWER:
+- merge updates of TightVNC from the version 1.3dev6 to the version 1.3dev7
+- change the way to check all the mouse button up
+- make dragging desktop option
+
+* version 0.4.0  2005/06/04
+SERVER:
+- change the code base from the UltraVNC to the TightVNC 1.3dev6.
+- as a consequence, TightVNC features such as file transferring are supported
+- fix problem that some visible window does not get opaque
+
+VIEWER:
+- add an option to put the icon into the system tray in full-screen mode and transparent mode
+- merge updates of TightVNC from the version 1.3dev5 to the version 1.3dev6
+
+* version 0.3.5  2005/02/27
+SERVER:
+- disable Zlib encoder which is incompatible with non-ultra viewers
+VIEWER:
+- servers will not be requested unsupported encodings (protocol 3.7t only)
+
+* version 0.3.3	 2005/01/10
+VIEWER:
+- bug fix of a problem on entering ')' and '\' with US keyboard
+  (commented out part of the Kanji-Key patch from UnderDone)
+
+* version 0.3.2	 2005/01/05
+VIEWER:
+- apply Kanji-Key correspondence Patch Ver.3.00 from UnderDone(http://underdone.net/)
+- support dragging the screen in full screen and transrect mode
+- put the icon in the tray during the full screen and transrect mode
+
+* version 0.3.1	 2004/11/27
+SERVER:
+- The win32 server finally support the win32 viewer.
+- The window monitor has been redesigned and integrated with the update tracker.
+- New option is added to expose/hide the task bar.
+
+VIEWER:
+- support for the win32 server
+
+* version 0.2.9	 2004/08/29
+VIEWER:
+- Bug fix about dragging windows -- need to keep capturing mouse while mouse buttons are pressed
+- modify viewer's icons to distinguish with server's icons
+- support compilation with VC++6.0
+
+* version 0.2.8	 2004/08/25
+VIEWER:
+- support full screen mode when the size of the remote desktop does not match the size of the local desktop
+- fix key repeat problem on KDE 3.1 and Windows servers
+  (key did not repeat on the above environments)
+- merge updates of TightVNC from the version 1.3dev4 to the version 1.3dev5
+- disable IME
+
+* version 0.2.7	 2004/08/12
+SERVER:
+- merge update of UltraVNC from RC14 to RC18
+- support KeyFocus message
+- disable CopyRect if TransRect is enabled
+- disable "Video Hook Driver" check box unless the driver is installed
+- remove "MS Logon" and "File Transfer" check boxes which are not supported by MetaVNC
+- rewrite vnclauncher
+- change installer
+VIEWER:
+- modify full screen mode not to stick to the topmost window
+- add option to disable Key Focus message
+
+* version 0.2.6	 2004/08/01
+VIEWER:
+- add new protocol "KeyFocus" message
+- modify key handling not to get garbled with Japanese keyboard
+- remove resize limit -- allow larger window size than screen size
+- disable "TR" button when the server does not support the transrect encoding
+
+* version 0.2.4  2004/05/20
+The Win32 version of MetaVNC viewer is added.
+	
+* version 0.2.3  2004/02/12
+Iinitial release on the sourceforge.net (server only)

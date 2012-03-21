@@ -1,0 +1,11 @@
+BUILDING VNCSERVER
+==================
+
+Visual Studio .NET 2003 can build this release.
+Use winvnc/winvnc.sln.
+
+BUILDING VNCVIEWER
+==================
+
+Visual Studio .NET 2003 can build this release.
+Use vncviewer/vncviewer.sln.
